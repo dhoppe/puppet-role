@@ -18,6 +18,7 @@ class role::extern {
 
 class role::server {
 	include apticron
+
 	include icinga
 	if $::lsbdistcodename == "lenny" {
 		monit::service { "nrpe.lenny": }
@@ -25,7 +26,14 @@ class role::server {
 		monit::service { "nrpe.common": }
 		sudo::service { "icinga": }
 	}
+
 	include metche
+
+	include ntp
+	icinga::service::services { "ntp":
+		command => "check_ntp_time",
+	}
+	monit::service { "ntp": }
 }
 
 # vim: tabstop=3
