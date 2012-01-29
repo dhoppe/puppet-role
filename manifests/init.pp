@@ -21,9 +21,9 @@ class role::server {
 
 	include icinga
 	if $::lsbdistcodename == "lenny" {
-		monit::service { "nrpe.lenny": }
+		monit::service { "nrpe-lenny": }
 	} else {
-		monit::service { "nrpe.common": }
+		monit::service { "nrpe-common": }
 		sudo::service { "icinga": }
 	}
 
@@ -39,7 +39,7 @@ class role::server {
 	icinga::service::services { "puppet":
 		command => "nrpe_check_puppet!2700!3600",
 	}
-	monit::service { "puppet.agent": }
+	monit::service { "puppet-agent": }
 }
 
 # vim: tabstop=3
