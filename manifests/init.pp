@@ -34,6 +34,12 @@ class role::server {
 		command => "check_ntp_time",
 	}
 	monit::service { "ntp": }
+
+	include puppet
+	icinga::service::services { "puppet":
+		command => "nrpe_check_puppet!2700!3600",
+	}
+	monit::service { "puppet.agent": }
 }
 
 # vim: tabstop=3
