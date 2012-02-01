@@ -35,6 +35,13 @@ class role::server {
 	}
 	monit::service { "ntp": }
 
+	include postfix
+	icinga::service::services { "mailq":
+		command => "nrpe_check_mailq!5!10",
+		group   => "mailq",
+	}
+	monit::service { "postfix": }
+
 	include puppet
 	icinga::service::services { "puppet":
 		command => "nrpe_check_puppet!2700!3600",
