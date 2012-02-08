@@ -48,6 +48,12 @@ class role::server {
 		command => "nrpe_check_puppet!2700!3600",
 	}
 	monit::service { "puppet-agent": }
+
+	include ssh
+	icinga::service::services { "ssh":
+		command => "check_ssh",
+	}
+	monit::service { "ssh": }
 }
 
 # vim: tabstop=3

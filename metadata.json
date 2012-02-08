@@ -6,11 +6,11 @@
   "project_page": "http://github.com/dhoppe/puppet-role",
   "source": "git://github.com/dhoppe/puppet-role",
   "summary": "Role Module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "checksums": {
-    "Modulefile": "5ef9bb32d4f9fe2d389781bd9824a00e",
+    "Modulefile": "8f73361c9eca5f2eeca6f5f37babf4d2",
     "README": "0bbdbafa4d5f8eb62896a28025dadb8e",
-    "manifests/init.pp": "6f282ddb18ddec1fe0808fc45b96e1b5",
+    "manifests/init.pp": "e33d89f45c23badd33f7ff72d1dd261a",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
     "tests/init.pp": "d9e7a76dc43de082e7d78075a5d7955a"
