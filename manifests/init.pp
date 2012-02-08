@@ -3,6 +3,7 @@ class role::default {
 	include bash
 	include common
 	include dpkg
+	include hosts
 	include monit
 	include motd
 	include resolv
