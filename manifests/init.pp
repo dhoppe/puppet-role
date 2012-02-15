@@ -49,6 +49,9 @@ class role::server {
 	}
 	monit::service { "puppet-agent": }
 
+	include rsyslog
+	monit::service { "rsyslog": }
+
 	include ssh
 	icinga::service::services { "ssh":
 		command => "check_ssh",
