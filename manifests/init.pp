@@ -14,49 +14,49 @@ class role::default {
 
 class role::extern {
 	include fail2ban
-	monit::service { "fail2ban": }
+	monit::service { 'fail2ban': }
 }
 
 class role::server {
 	include apticron
 
 	include icinga
-	if $::lsbdistcodename == "lenny" {
-		monit::service { "nrpe-lenny": }
+	if $::lsbdistcodename == 'lenny' {
+		monit::service { 'nrpe-lenny': }
 	} else {
-		monit::service { "nrpe-common": }
-		sudo::service { "icinga": }
+		monit::service { 'nrpe-common': }
+		sudo::service { 'icinga': }
 	}
 
 	include metche
 
 	include ntp
-	icinga::service::services { "ntp":
-		command => "check_ntp_time",
+	icinga::service::services { 'ntp':
+		command => 'check_ntp_time',
 	}
-	monit::service { "ntp": }
+	monit::service { 'ntp': }
 
 	include postfix
-	icinga::service::services { "mailq":
-		command => "nrpe_check_mailq!5!10",
-		group   => "mailq",
+	icinga::service::services { 'mailq':
+		command => 'nrpe_check_mailq!5!10',
+		group   => 'mailq',
 	}
-	monit::service { "postfix": }
+	monit::service { 'postfix': }
 
 	include puppet
-	icinga::service::services { "puppet":
-		command => "nrpe_check_puppet!2700!3600",
+	icinga::service::services { 'puppet':
+		command => 'nrpe_check_puppet!2700!3600',
 	}
-	monit::service { "puppet-agent": }
+	monit::service { 'puppet-agent': }
 
 	include rsyslog
-	monit::service { "rsyslog": }
+	monit::service { 'rsyslog': }
 
 	include ssh
-	icinga::service::services { "ssh":
-		command => "check_ssh",
+	icinga::service::services { 'ssh':
+		command => 'check_ssh',
 	}
-	monit::service { "ssh": }
+	monit::service { 'ssh': }
 }
 
 # vim: tabstop=3
