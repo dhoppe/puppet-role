@@ -1,4 +1,4 @@
-class role {
+class role inherits role::params {
   include apt
   include bash
   include common
