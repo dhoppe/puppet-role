@@ -3,6 +3,9 @@ class role inherits role::params {
   include bash
   include common
   include dpkg
+  if $::lsbdistcodename != 'lenny' {
+    include grub
+  }
   include hosts
   include monit
   include motd
