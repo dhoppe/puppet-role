@@ -2,12 +2,8 @@ class role::server {
   include apticron
 
   include icinga
-  if $::lsbdistcodename == 'lenny' {
-    monit::service { 'nrpe-lenny': }
-  } else {
-    monit::service { 'nrpe-common': }
-    sudo::service { 'icinga': }
-  }
+  monit::service { 'nrpe-common': }
+  sudo::service { 'icinga': }
 
   include metche
 
