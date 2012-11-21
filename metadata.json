@@ -16,7 +16,7 @@
     "Rakefile": "17e38802c4cef92b76ce3c00b9e339ec",
     "manifests/extern.pp": "224fb20ceb535525e40334dad256b7b1",
     "manifests/init.pp": "55b04f8ce7138a509add439c5d79fd7e",
-    "manifests/params.pp": "460ba607c38b2d0028d35d24eaf1632c",
+    "manifests/params.pp": "2cfebfc4a41a952d48f287863da346df",
     "manifests/server.pp": "d2e9d8495c44c976699b2f0c214e52eb",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
